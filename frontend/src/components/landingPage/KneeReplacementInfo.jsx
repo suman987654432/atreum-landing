@@ -1,5 +1,5 @@
 import knee from "../../images/knee.png";
-import vector1 from "../../images/vector1.png";
+import vector1 from "../../images/Vector1.png";
 
 const KneeReplacementInfo = () => {
   return (
