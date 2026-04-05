@@ -1,5 +1,5 @@
 import knee from "../../images/knee.png";
-import vector from "../../images/vector.png";
+import vector1 from "../../images/vector1.png";
 
 const KneeReplacementInfo = () => {
   return (
@@ -64,7 +64,7 @@ const KneeReplacementInfo = () => {
 
         {/* Border Graphic as background image */}
         <div className="absolute top-0 left-0 w-full -z-1" style={{ height: '450px' }}>
-          <img src={vector} alt="decorative border" className="w-full h-full object-fit" style={{ display: 'block' }} />
+          <img src={vector1} alt="decorative border" className="w-full h-full object-fit" style={{ display: 'block' }} />
         </div>
 
         <div className="absolute top-[10px] right-0 md:right-[5%] lg:right-[8%] w-fit z-[25] pointer-events-none">
