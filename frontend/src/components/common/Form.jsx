@@ -238,11 +238,11 @@ const Form = () => {
 
                 {/* Orthopedic Concern */}
                 <div className="pt-2">
-                    <label className="block text-black text-base mb-1">Orthopedic Concern</label>
+                    <label className="block text-black text-base mb-1">Your Concern</label>
                     <textarea
                         name="concern"
                         required
-                        placeholder="Please describe your orthopedic concern to us here"
+                        placeholder="Please describe your concern to us here"
                         value={formData.concern}
                         onChange={handleInputChange}
                         rows="4"
