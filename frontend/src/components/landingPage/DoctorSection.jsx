@@ -4,11 +4,11 @@ import stats from "../../images/stats.avif";
 
 const DoctorSection = () => {
   return (
-    <section className="relative w-full max-w-[1550px] mx-auto px-4 md:px-12 py-10 md:py-14 font-sohne mt-24 md:mt-32">
-      {/* Main Section Header - Shifted slightly left */}
-      <div className="flex justify-end mb-8 md:mb-12 md:pr-14 lg:pr-20">
-        <h2 className="text-3xl md:text-[40px] font-canela text-[#0B5D85] leading-tight flex gap-3">
-          <span className="italic font-semibold">Orthopaedic experts</span>
+    <section className="relative w-full max-w-[1550px] mx-auto px-4 md:px-12 py-10 md:py-14 font-sohne mt-8 md:mt-32">
+      {/* Main Section Header - Centered on Mobile, Shifted right on Desktop */}
+      <div className="flex justify-center md:justify-end mb-8 md:mb-12 md:pr-14 lg:pr-20">
+        <h2 className="text-2xl sm:text-3xl md:text-[40px] font-canela text-[#0B5D85] leading-tight flex flex-col sm:flex-row items-center md:items-end gap-1 sm:gap-3 text-center md:text-right">
+          <span className="italic font-semibold px-2 sm:px-0">Orthopaedic experts</span>
           <span className="font-normal font-canela">at Atreum</span>
         </h2>
       </div>

@@ -44,6 +44,14 @@ const KneeReplacementInfo = () => {
         </div>
 
         <div className="relative z-10 w-full mt-12 md:mt-24 md:flex items-end justify-between px-2 md:px-14">
+          {/* Mobile-only: knee image centered */}
+          <div className="flex md:hidden justify-center mb-6">
+            <img
+              src={knee}
+              alt="Knee replacement illustration"
+              className="w-[220px] h-auto object-contain"
+            />
+          </div>
           <div className="w-full md:w-[50%] mt-6">
             <p className="text-[18px] md:text-[23px] text-[#0B5D85] font-medium leading-[1.2] pr-4">
               At Atreum, we focus on <span className="italic font-bold">precision-led treatment</span> and <span className="italic font-bold">personalised recovery plans</span> to ensure <span className="italic font-bold">better outcomes</span> and <span className="italic font-bold">faster rehabilitation</span>.
@@ -62,12 +70,13 @@ const KneeReplacementInfo = () => {
           </div>
         </div>
 
-        {/* Border Graphic as background image */}
-        <div className="absolute top-0 left-0 w-full -z-1" style={{ height: '450px' }}>
+        {/* Border Graphic - Desktop only */}
+        <div className="hidden md:block absolute top-0 left-0 w-full -z-1" style={{ height: '450px' }}>
           <img src={vector1} alt="decorative border" className="w-full h-full object-fit" style={{ display: 'block' }} />
         </div>
 
-        <div className="absolute top-[10px] right-0 md:right-[5%] lg:right-[8%] w-fit z-[25] pointer-events-none">
+        {/* Knee illustration - Desktop only (absolute positioned) */}
+        <div className="hidden md:block absolute top-[10px] right-0 md:right-[5%] lg:right-[8%] w-fit z-[25] pointer-events-none">
           <img
             src={knee}
             alt="Knee replacement illustration"
