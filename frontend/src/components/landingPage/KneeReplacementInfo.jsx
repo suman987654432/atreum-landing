@@ -3,7 +3,7 @@ import vector1 from "../../images/Vector1.png";
 
 const KneeReplacementInfo = () => {
   return (
-    <section className="relative w-full max-w-[1550px] mx-auto px-4 md:px-12 py-20 font-sohne overflow-hidden">
+    <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 py-20 font-sohne overflow-hidden">
       <div className="relative w-full min-h-[600px] flex flex-col md:block bg-[#0FB1AB33] rounded-xl">
 
         {/* <div className="absolute bottom-0 right-0 w-full h-[60%] md:h-[270px] bg-[#E0F3F2] rounded-[32px] md:rounded-[40px] z-0"></div> */}

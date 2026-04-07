@@ -3,38 +3,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import logo from "../../images/logo.png";
 
 const Navbar = () => {
-  const scrollToSection = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (!element) return;
 
-    const offset = 80;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-    const startPosition = window.pageYOffset;
-    const distance = offsetPosition - startPosition;
-    const duration = 2000; // Luxuriously slow duration for a professional feel
-    let start = null;
-
-    function animation(currentTime) {
-      if (start === null) start = currentTime;
-      const timeElapsed = currentTime - start;
-      const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    // Professional Ease-In-Out-Cubic function
-    function easeInOutCubic(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t * t + b;
-      t -= 2;
-      return c / 2 * (t * t * t + 2) + b;
-    }
-
-    requestAnimationFrame(animation);
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-[#f0f0f0] shadow-md">
@@ -57,12 +26,7 @@ const Navbar = () => {
         <div className="flex items-center gap-1.5 md:gap-4 font-sohne shrink-0">
 
           {/* Appointment Button - Only shown on Desktop (md onwards) */}
-          <button 
-            onClick={(e) => scrollToSection(e, 'form-section')}
-            className="hidden md:block bg-[#00A5A9] text-white px-5 py-3 rounded-[6px] text-[14px] font-semibold uppercase tracking-wider transition-all hover:bg-[#008c8f] whitespace-nowrap active:scale-95"
-          >
-            BOOK APPOINTMENT
-          </button>
+          
 
           <div className="flex items-center gap-1 md:gap-1.5 font-sohne">
             {/* Phone Icon Box - Always Visible (Mobile and Desktop) */}

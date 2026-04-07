@@ -11,6 +11,7 @@ const INITIAL_FORM_DATA = {
     consultationPreference: '',
 };
 
+
 const validateForm = (values) => {
     const nextErrors = {};
 
@@ -91,12 +92,12 @@ const ContactSection = () => {
     return (
         <section className="relative w-full px-4 md:px-12 py-4 md:py-8 flex justify-center items-center">
             {/* Main Container - Same style as Hero Section */}
-            <div className="relative w-full max-w-[1550px] bg-[#D9D9D933] rounded-[32px] md:rounded-[20px] overflow-hidden p-6 md:px-14 md:py-10 border border-white/40 shadow-sm min-h-0">
+            <div className="relative w-full max-w-[1440px] bg-[#D9D9D933] rounded-[32px] md:rounded-[20px] overflow-hidden p-6 md:px-14 md:py-10 border border-white/40 shadow-sm min-h-0">
 
                 <div className="relative z-10 w-full flex flex-col items-center gap-6 md:gap-8 transition-all duration-300">
                     {/* Centered Heading */}
-                    <h2 className="text-4xl md:text-[40px] font-canela text-[#0B5D85] leading-tight tracking-tight text-center">
-                        Get a <span className="italic font-light">free cost estimate</span> now
+                    <h2 className="text-[32px] md:text-[37px] font-canela font-normal text-[#0B5D85] leading-none tracking-tight text-center">
+                        Get a <span className="font-bold italic">free cost estimate</span> now
                     </h2>
 
                     {/* Contact Form */}
@@ -109,7 +110,7 @@ const ContactSection = () => {
                                 placeholder="Full Name"
                                 value={formData.fullName}
                                 onChange={handleInputChange}
-                                className={`w-full px-6 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.fullName ? 'border-red-400' : 'border-[#0FB1AB]'}`}
+                                className={`w-full px-4 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.fullName ? 'border-red-400' : 'border-[#0FB1AB]'}`}
                             />
                             {errors.fullName && <p className="text-xs text-red-600 font-sohne">{errors.fullName}</p>}
                         </div>
@@ -124,7 +125,7 @@ const ContactSection = () => {
                                 placeholder="Mobile Number"
                                 value={formData.mobileNumber}
                                 onChange={handleInputChange}
-                                className={`w-full px-6 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.mobileNumber ? 'border-red-400' : 'border-[#0FB1AB]'}`}
+                                className={`w-full px-4 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.mobileNumber ? 'border-red-400' : 'border-[#0FB1AB]'}`}
                             />
                             {errors.mobileNumber && <p className="text-xs text-red-600 font-sohne">{errors.mobileNumber}</p>}
                         </div>
@@ -137,7 +138,7 @@ const ContactSection = () => {
                                 placeholder="Email ID"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className={`w-full px-6 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.email ? 'border-red-400' : 'border-[#0FB1AB]'}`}
+                                className={`w-full px-4 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.email ? 'border-red-400' : 'border-[#0FB1AB]'}`}
                             />
                             {errors.email && <p className="text-xs text-red-600 font-sohne">{errors.email}</p>}
                         </div>
@@ -150,20 +151,19 @@ const ContactSection = () => {
                                 placeholder="Type your Query"
                                 value={formData.concern}
                                 onChange={handleInputChange}
-                                className={`w-full px-6 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.concern ? 'border-red-400' : 'border-[#0FB1AB]'}`}
+                                className={`w-full px-4 py-3.5 bg-white/60 border rounded-2xl md:rounded-[15px] text-lg font-sohne text-[#0B5D85] placeholder:text-black focus:outline-none ${errors.concern ? 'border-red-400' : 'border-[#0FB1AB]'}`}
                             />
                             {errors.concern && <p className="text-xs text-red-600 font-sohne">{errors.concern}</p>}
                         </div>
 
                         {/* Status Message */}
                         {status.message && (
-                            <div className={`col-span-1 md:col-span-2 text-center p-3 rounded-xl text-sm font-bold font-sohne tracking-wide ${
-                                status.type === 'success'
+                            <div className={`col-span-1 md:col-span-2 text-center p-3 rounded-xl text-sm font-bold font-sohne tracking-wide ${status.type === 'success'
                                     ? 'bg-[#0FB1AB]/10 text-[#19628D] border border-[#0FB1AB]/20'
                                     : status.type === 'error'
-                                    ? 'bg-red-50 text-red-600 border border-red-100'
-                                    : 'bg-[#19628D]/5 text-[#19628D]'
-                            }`}>
+                                        ? 'bg-red-50 text-red-600 border border-red-100'
+                                        : 'bg-[#19628D]/5 text-[#19628D]'
+                                }`}>
                                 {status.type === 'success' && <span className="mr-2">✓</span>}
                                 {status.message}
                             </div>
@@ -174,9 +174,8 @@ const ContactSection = () => {
                             <button
                                 type="submit"
                                 disabled={status.type === 'loading'}
-                                className={`px-14 py-3 bg-[#0B5D85] text-white font-sohne font-bold text-lg rounded-xl md:rounded-[10px] transition-all shadow-md active:scale-95 ${
-                                    status.type === 'loading' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#094d6e]'
-                                }`}
+                                className={`px-14 py-3 bg-[#0B5D85] text-white font-sohne font-bold text-lg rounded-xl md:rounded-[10px] transition-all shadow-md active:scale-95 ${status.type === 'loading' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#094d6e]'
+                                    }`}
                             >
                                 {status.type === 'loading' ? 'SENDING...' : 'SUBMIT'}
                             </button>
