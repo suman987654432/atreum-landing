@@ -124,8 +124,9 @@ const Form = () => {
     };
 
     return (
-        <div id="form-section" className="w-full max-w-2xl mx-auto bg-[#D9D9D933] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl">
-            <div className="mb-6 sm:mb-8">
+        <section className="px-3 md:px-12 py-4 md:py-8">
+            <div id="form-section" className="w-full max-w-2xl mx-auto bg-[#D9D9D933] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl">
+                <div className="mb-6 sm:mb-8">
                 <h2 className="text-[#19628D] text-center">
                     <span className="font-canela font-light text-[1.6rem] sm:text-[1.9rem] md:text-[2rem] leading-[1.05] tracking-normal">Share a few details below to help <br />us</span>
                     <span className="font-canela font-bold italic text-[1.6rem] sm:text-[1.9rem] md:text-[2rem] leading-[1.05] tracking-normal text-[#19628D]"> understand your concern.</span>
@@ -303,7 +304,7 @@ const Form = () => {
                     <button
                         type="submit"
                         disabled={status.type === 'loading'}
-                        className={`w-full sm:w-auto px-8 sm:px-16 py-3 border border-[#0FB1AB] text-[#0FB1AB] text-xs sm:text-sm font-extrabold uppercase rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0FB1AB] focus:ring-offset-2 tracking-wider ${status.type === 'loading'
+                        className={`w-auto px-10 sm:px-16 py-2.5 sm:py-3 border border-[#0FB1AB] text-[#0FB1AB] text-[13px] sm:text-sm font-extrabold uppercase rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0FB1AB] focus:ring-offset-2 tracking-wider ${status.type === 'loading'
                             ? 'opacity-50 cursor-not-allowed'
                             : 'hover:bg-[#0FB1AB] hover:text-white'
                             }`}
@@ -311,8 +312,9 @@ const Form = () => {
                         {status.type === 'loading' ? 'SENDING...' : 'SUBMIT'}
                     </button>
                 </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </section>
     )
 }
 
