@@ -1,12 +1,12 @@
 import React from 'react';
-import doctor from "../../images/doctor.png";
+import doctor from "../../images/drchetan.avif";
 import stats from "../../images/stats.avif";
 
-const DoctorSection = () => {
+const DoctorSection = ({ onBookAppointment }) => {
   return (
     <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 py-10 md:py-14 font-sohne -mt-16 md:mt-0">
       {/* Main Section Header - Centered on Mobile, Shifted right on Desktop */}
-      <div className="flex justify-end mt-4 mb-4 md:mb-16 transform translate-y-6 md:translate-y-0">
+      <div className="flex justify-end mt-4 mb-4 md:mb-6 transform translate-y-6 md:translate-y-0">
         <h2 className="text-[clamp(19px,4.5vw,53px)] font-canela text-[#0B5D85] leading-tight md:leading-[1.2] flex flex-row items-center md:items-end gap-1 sm:gap-4 text-center md:text-right tracking-tight">
           <span className="font-bold italic">Orthopaedic experts</span>
           <span className="font-normal">at Atreum</span>
@@ -17,7 +17,7 @@ const DoctorSection = () => {
       <div className="relative w-full bg-[#F3F7F8] rounded-lg md:rounded-[24px] p-3 md:p-10 lg:p-14 flex flex-row items-center justify-end min-h-[132px] md:min-h-[220px] mt-10 md:mt-0 overflow-visible">
 
         {/* Clinician Portrait - Side-by-Side Scaling */}
-        <div className="absolute bottom-0 -left-4 w-[210px] sm:w-[250px] md:w-[480px] lg:w-[540px] xl:w-[580px] z-10 flex items-end translate-y-0 md:translate-y-0">
+        <div className="absolute bottom-0 -left-4 w-[230px] sm:w-[280px] md:w-[520px] lg:w-[600px] xl:w-[650px] z-10 flex items-end translate-y-0 md:translate-y-0">
           <img
             src={doctor}
             alt="Dr. Anil Kumar H"
@@ -26,31 +26,28 @@ const DoctorSection = () => {
         </div>
 
         {/* Clinical Details - Left-Aligned Hierarchy */}
-        <div className="w-[60%] md:w-[50%] flex flex-col items-start text-left gap-0 md:gap-6 z-20 pl-8 lg:pl-10 xl:pl-16">
+        <div className="w-[60%] md:w-[50%] flex flex-col items-start text-left gap-0 md:gap-2 z-20 pl-8 lg:pl-10 xl:pl-16">
           {/* Header Credentials */}
           <div className="space-y-0 w-full overflow-hidden">
             <h3 className="text-[clamp(14px,3vw,40px)] font-canela font-normal text-[#0B5D85] leading-tight flex justify-start items-end gap-x-1 whitespace-nowrap">
-              Dr Anil Kumar H <span className="text-[clamp(10px,1.8vw,24px)] font-sohne font-normal text-gray-700 mb-0.5">(MBBS, MD)</span>
+              Dr Chethan Kumar P  <span className="text-[clamp(10px,1.8vw,24px)] font-sohne font-normal text-gray-700 mb-0.5">(MBBS, MD)</span>
             </h3>
-            <p className="text-[clamp(12px,1.5vw,19px)] text-gray-800 font-medium leading-tight">
-              <span className="font-bold">18+ years</span> <span className="mx-1 text-gray-300">|</span> <span className="italic font-bold">Sr. Consultant</span>
-            </p>
           </div>
 
           {/* Departmental Intel */}
-          <div className="space-y-0">
+          <div className="space-y-0.5">
             <p className="text-[clamp(12px,1.6vw,20px)] font-semibold font-sohne text-gray-900 tracking-wider uppercase leading-tight">
-              General Physician
+              Orthopedics <span className="hidden md:inline mx-2 text-gray-300 font-normal">|</span> <span className="italic font-bold normal-case">Consultant</span>
             </p>
             <p className="text-[clamp(12px,1.8vw,22px)] text-gray-900 font-semibold tracking-tight leading-tight">
-              Mon - Fri &nbsp; 7:00 PM - 8:30 PM
+              Mon - Fri &nbsp; 1:00 PM - 4:00 PM
             </p>
           </div>
 
           {/* Engagement CTA */}
-          <div className="mt-1 md:mt-1 flex items-center justify-start gap-1 md:gap-6 w-full -ml-2 md:-ml-6 scale-90 md:scale-100 origin-left">
+          <div className="mt-1 md:mt-1 flex items-center justify-start gap-1 md:gap-2 w-full -ml-2 md:-ml-6 scale-90 md:scale-100 origin-left">
             <span className="text-[#0B5D85] text-3xl md:text-4xl font-bold -translate-y-[2px] md:translate-y-0">‹</span>
-            <button className="bg-[#0FB1AB] text-white px-2 md:px-10 py-0.5 md:py-1 rounded-md md:rounded-xl font-sohne font-semibold text-[10px] md:text-[20px] leading-[24px] md:leading-[44px]  flex items-center justify-center   tracking-normal uppercase">
+            <button onClick={onBookAppointment} className="bg-[#0FB1AB] text-white px-2 md:px-10 py-0.5 md:py-1 rounded-md md:rounded-xl font-sohne font-semibold text-[10px] md:text-[20px] leading-[24px] md:leading-[44px]  flex items-center justify-center   tracking-normal uppercase">
               Book Appointment
             </button>
             <span className="text-[#0B5D85] text-3xl md:text-4xl font-bold -translate-y-[2px] md:translate-y-0">›</span>

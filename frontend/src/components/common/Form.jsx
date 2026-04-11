@@ -47,7 +47,7 @@ const validateForm = (values) => {
     return nextErrors;
 };
 
-const Form = () => {
+const Form = ({ inModal = false }) => {
     const [formData, setFormData] = useState(INITIAL_FORM_DATA);
     const [errors, setErrors] = useState({});
 
@@ -124,7 +124,7 @@ const Form = () => {
     };
 
     return (
-        <section className="px-3 md:px-12 py-4 md:py-8">
+        <section className={inModal ? "p-0" : "px-3 md:px-12 py-4 md:py-8"}>
             <div id="form-section" className="w-full max-w-2xl mx-auto bg-[#D9D9D933] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl">
                 <div className="mb-6 sm:mb-8">
                 <h2 className="text-[#19628D] text-center">

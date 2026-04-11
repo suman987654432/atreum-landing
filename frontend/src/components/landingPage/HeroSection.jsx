@@ -2,41 +2,9 @@ import React, { useState } from 'react';
 import logo from "../../images/logo.png";
 import hero from "../../images/hero.png";
 
-const HeroSection = () => {
+const HeroSection = ({ onBookAppointment }) => {
     // Current Slide State
     const [currentSlide, setCurrentSlide] = useState(1);
-    const scrollToSection = (e, id) => {
-        e.preventDefault();
-        const element = document.getElementById(id);
-        if (!element) return;
-
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        const startPosition = window.pageYOffset;
-        const distance = offsetPosition - startPosition;
-        const duration = 2000; // Luxuriously slow duration for a professional feel
-        let start = null;
-
-        function animation(currentTime) {
-            if (start === null) start = currentTime;
-            const timeElapsed = currentTime - start;
-            const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
-        }
-
-        // Professional Ease-In-Out-Cubic function
-        function easeInOutCubic(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t * t + b;
-            t -= 2;
-            return c / 2 * (t * t * t + 2) + b;
-        }
-
-        requestAnimationFrame(animation);
-    };
 
     return (
         <section className="relative w-full px-4 md:px-12 py-2 md:py-10 flex justify-center items-center mt-2 md:mt-5 overflow-visible">
@@ -87,7 +55,7 @@ const HeroSection = () => {
                     </div>
 
                     <div className="mt-2 text-center md:text-left">
-                        <button onClick={(e) => scrollToSection(e, 'form-section')} className="bg-[#0FB1AB] text-white px-2 md:px-4 py-2.5 md:py-1 rounded-lg font-sohne font-semibold text-[13px] md:text-[20px] leading-tight md:leading-[44px] transition-all flex items-center justify-center tracking-normal uppercase hover:bg-[#0d9a95]">
+                        <button onClick={onBookAppointment} className="bg-[#0FB1AB] text-white px-2 md:px-4 py-2.5 md:py-1 rounded-lg font-sohne font-semibold text-[13px] md:text-[20px] leading-tight md:leading-[44px] transition-all flex items-center justify-center tracking-normal uppercase hover:bg-[#0d9a95]">
                             Book Appointment
                         </button>
                     </div>

@@ -41,7 +41,7 @@ const Navbar = () => {
             {/* Phone Number Box - Only shown on Desktop (md onwards) */}
             <a 
               href="tel:+919784524567" 
-              className="hidden md:flex bg-[#4980AA] text-white px-5 py-3 rounded-[6px] items-center text-[16px] font-medium transition-all hover:bg-[#3d6b8f] whitespace-nowrap shadow-sm active:scale-95"
+              className="flex bg-[#4980AA] text-white px-2 py-2 md:px-5 md:py-3 rounded-[4px] md:rounded-[6px] items-center text-[10px] md:text-[16px] font-medium transition-all hover:bg-[#3d6b8f] whitespace-nowrap shadow-sm active:scale-95"
               title="Call Us"
             >
               +91-9784524567
