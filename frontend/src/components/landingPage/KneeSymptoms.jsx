@@ -35,7 +35,7 @@ const KneeSymptoms = () => {
     ];
 
     return (
-        <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 pt-0 pb-10 md:pt-0 md:pb-20 font-sohne overflow-hidden -mt-16 md:mt-0">
+        <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 pt-0 pb-10 md:pt-0 md:pb-20 font-sohne overflow-hidden -mt-28 md:-mt-12">
             {/* Header Section */}
             <div className="mb-6 md:mb-10 pl-6 md:pl-10 lg:pl-20">
                 <h2 className="text-[24px] md:text-[53px] font-canela font-normal text-[#0B5D85] leading-tight md:leading-[60px] mb-2 md:mb-4 tracking-tight">

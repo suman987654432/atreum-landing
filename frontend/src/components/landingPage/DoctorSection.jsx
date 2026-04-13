@@ -4,7 +4,7 @@ import stats from "../../images/stats.avif";
 
 const DoctorSection = ({ onBookAppointment }) => {
   return (
-    <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 py-10 md:py-14 font-sohne -mt-16 md:mt-0">
+    <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 py-10 md:py-14 font-sohne -mt-16 md:mt-10">
       {/* Main Section Header - Centered on Mobile, Shifted right on Desktop */}
       <div className="flex justify-end mt-4 mb-4 md:mb-6 transform translate-y-6 md:translate-y-0">
         <h2 className="text-[clamp(19px,4.5vw,53px)] font-canela text-[#0B5D85] leading-tight md:leading-[1.2] flex flex-row items-center md:items-end gap-1 sm:gap-4 text-center md:text-right tracking-tight">
@@ -17,7 +17,7 @@ const DoctorSection = ({ onBookAppointment }) => {
       <div className="relative w-full bg-[#F3F7F8] rounded-lg md:rounded-[24px] p-3 md:p-10 lg:p-14 flex flex-row items-center justify-end min-h-[132px] md:min-h-[220px] mt-10 md:mt-0 overflow-visible">
 
         {/* Clinician Portrait - Side-by-Side Scaling */}
-        <div className="absolute bottom-0 -left-4 w-[230px] sm:w-[280px] md:w-[520px] lg:w-[600px] xl:w-[650px] z-10 flex items-end translate-y-0 md:translate-y-0">
+        <div className="absolute bottom-0 -left-12 md:-left-4 w-[230px] sm:w-[280px] md:w-[520px] lg:w-[600px] xl:w-[650px] z-10 flex items-end translate-y-0 md:translate-y-0">
           <img
             src={doctor}
             alt="Dr. Anil Kumar H"
