@@ -59,10 +59,10 @@ const DoctorSection = ({ onBookAppointment }) => {
         </div>
 
         {/* Clinical Details - Left-Aligned Hierarchy */}
-        <div className="w-[60%] md:w-[55%] lg:w-[50%] flex flex-col items-start text-left gap-0 md:gap-2 z-20 pl-2 md:pl-8 lg:pl-10 xl:pl-16">
+        <div className="w-[60%] md:w-[55%] lg:w-[50%] flex flex-col items-start text-left gap-0 md:gap-2 z-20 pl-2 pr-2 md:pr-0 md:pl-8 lg:pl-10 xl:pl-16">
           {/* Header Credentials */}
           <div className="space-y-0 w-full overflow-hidden">
-            <h3 className="text-[clamp(14px,3vw,40px)] font-canela font-normal text-[#0B5D85] leading-tight flex justify-start items-end gap-x-1 whitespace-nowrap">
+            <h3 className="text-[clamp(14px,3vw,40px)] font-canela font-normal text-[#0B5D85] leading-tight flex justify-start items-end gap-x-1 whitespace-normal md:whitespace-nowrap">
               {`Dr ${activeDoctor?.name ?? ""}`} <span className="text-[clamp(10px,1.8vw,24px)] font-sohne font-normal text-gray-700 mb-0.5">({activeDoctor?.qualification ?? ""})</span>
             </h3>
           </div>
@@ -80,7 +80,7 @@ const DoctorSection = ({ onBookAppointment }) => {
           </div>
 
           {/* Engagement CTA */}
-          <div className="mt-1 md:mt-2 flex items-center justify-start gap-1 md:gap-2 w-full -ml-2 md:-ml-4 lg:-ml-6 scale-90 md:scale-95 lg:scale-100 origin-left">
+          <div className="mt-1 md:mt-2 flex items-center justify-start gap-1 md:gap-2 w-full ml-0 md:-ml-4 lg:-ml-6 scale-90 md:scale-95 lg:scale-100 origin-left">
             <button
               type="button"
               onClick={showPreviousDoctor}

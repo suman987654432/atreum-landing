@@ -30,7 +30,7 @@ const KneeReplacementInfo = () => {
               <h2 className="text-[19px] md:text-[32px] lg:text-[42px] font-canela text-[#0B5D85] leading-tight tracking-tight mb-3 md:mb-6 lg:mb-8">
                 What is <span className="italic font-bold">Knee <br /> Replacement</span> Surgery?
               </h2>
-               <p className="text-[13px] md:text-[20px] lg:text-[28px] text-[#0B5D85]/80 font-sohne leading-snug lg:leading-[1.1]">
+               <p className="text-[13px] md:text-[20px] lg:text-[28px] text-[#0B5D85]/80 font-sohne leading-snug text-left lg:leading-[1.1]">
                 <span className="font-semibold text-[#0B5D85]">Knee replacement surgery</span> is a procedure
                 that replaces <span className="font-bold text-[#0B5D85]">damaged</span> or <span className="font-bold text-[#0B5D85]">worn-out parts</span> of
                 the <span className="font-bold text-[#0B5D85]">knee joint</span> with <span className="font-bold text-[#0B5D85]">advanced artificial implants</span>.
@@ -46,7 +46,7 @@ const KneeReplacementInfo = () => {
                 className="w-full h-auto object-contain"
               />
               <div className="w-full  h-[1px] bg-[#0FB1AB] mt-[-2px] mb-2"></div>
-              <p className="text-[13px] text-[#0B5D85]/90 leading-tight font-medium font-bucher">
+              <p className="text-[13px] text-[#0B5D85]/90 leading-tight text-left font-medium font-bucher">
                 A knee replacement may be <span className="font-bold text-[#0B5D85]">total</span> or <span className="font-bold text-[#0B5D85]">partial</span>, depending on the <span className="font-bold text-[#0B5D85]">extent of joint damage</span>.
               </p>
             </div>
@@ -78,7 +78,7 @@ const KneeReplacementInfo = () => {
           <div className="block md:hidden h-[1px] bg-[#0FB1AB]/30 my-3"></div>
 
           <div className="w-full md:w-[50%] mb-5 order-2 md:order-1">
-            <p className="text-[16px] md:text-[22px] lg:text-[34px] text-[#0B5D85] font-canela leading-tight lg:leading-[1.1] md:pr-4">
+            <p className="text-[16px] md:text-[22px] lg:text-[34px] text-[#0B5D85] font-canela leading-tight text-left md:text-left lg:leading-[1.1] md:pr-4">
               At Atreum, we focus on <span className="italic font-bold">precision-led treatment</span> and <span className="italic font-bold">personalised recovery plans</span> to ensure <span className="italic font-bold">better outcomes</span> and <span className="italic font-bold">faster rehabilitation</span>.
             </p>
           </div>
