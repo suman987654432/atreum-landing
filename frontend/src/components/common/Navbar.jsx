@@ -31,7 +31,7 @@ const Navbar = () => {
           <div className="flex items-center gap-1 md:gap-1.5 font-sohne">
             {/* Phone Icon Box - Always Visible (Mobile and Desktop) */}
             <a 
-              href="tel:+919784524567" 
+              href="tel:+919606970542" 
               className="bg-[#4980AA] text-white p-2.5 md:p-3.5 rounded-[4px] md:rounded-[6px] flex items-center justify-center transition-all hover:bg-[#3d6b8f] cursor-pointer shadow-sm active:scale-95"
               title="Call Us"
             >
@@ -40,11 +40,11 @@ const Navbar = () => {
 
             {/* Phone Number Box - Only shown on Desktop (md onwards) */}
             <a 
-              href="tel:+919784524567" 
+              href="tel:+919606970542" 
               className="flex bg-[#4980AA] text-white px-2 py-2 md:px-5 md:py-3 rounded-[4px] md:rounded-[6px] items-center text-[10px] md:text-[16px] font-medium transition-all hover:bg-[#3d6b8f] whitespace-nowrap shadow-sm active:scale-95"
               title="Call Us"
             >
-              +91-9784524567
+              +91-9606970542
             </a>
           </div>
         </div>

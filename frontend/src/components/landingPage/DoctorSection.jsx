@@ -1,8 +1,41 @@
-import React from 'react';
-import doctor from "../../images/drchetan.avif";
+import React, { useMemo, useState } from 'react';
+import drchethan from "../../images/drchetan.avif";
+import drgopal from "../../images/drgopal.avif";
 import stats from "../../images/stats.avif";
+import doctors from "../../data/doctor.json";
 
 const DoctorSection = ({ onBookAppointment }) => {
+  const [activeDoctorIndex, setActiveDoctorIndex] = useState(0);
+
+  const doctorImages = useMemo(
+    () => ({
+      drchetan: drchethan,
+      drgopal,
+    }),
+    []
+  );
+
+  const activeDoctor = doctors[activeDoctorIndex] ?? doctors[0];
+  const activeDoctorImage = doctorImages[activeDoctor?.image] ?? drchethan;
+
+  const showPreviousDoctor = () => {
+    setActiveDoctorIndex((prevIndex) => {
+      if (!doctors.length) {
+        return prevIndex;
+      }
+      return (prevIndex - 1 + doctors.length) % doctors.length;
+    });
+  };
+
+  const showNextDoctor = () => {
+    setActiveDoctorIndex((prevIndex) => {
+      if (!doctors.length) {
+        return prevIndex;
+      }
+      return (prevIndex + 1) % doctors.length;
+    });
+  };
+
   return (
     <section className="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 py-10 md:py-14 font-sohne -mt-16 md:mt-10">
       {/* Main Section Header - Centered on Mobile, Shifted right on Desktop */}
@@ -17,40 +50,56 @@ const DoctorSection = ({ onBookAppointment }) => {
       <div className="relative w-full bg-[#F3F7F8] rounded-lg md:rounded-[24px] p-3 md:p-10 lg:p-14 flex flex-row items-center justify-end min-h-[132px] md:min-h-[220px] mt-10 md:mt-0 overflow-visible">
 
         {/* Clinician Portrait - Side-by-Side Scaling */}
-        <div className="absolute bottom-0 -left-12 md:-left-4 w-[230px] sm:w-[280px] md:w-[520px] lg:w-[600px] xl:w-[650px] z-10 flex items-end translate-y-0 md:translate-y-0">
+        <div className="absolute bottom-0 -left-12 md:-left-4 w-[230px] sm:w-[280px] md:w-[420px] lg:w-[600px] xl:w-[650px] z-10 flex items-end translate-y-0 md:translate-y-0">
           <img
-            src={doctor}
-            alt="Dr. Anil Kumar H"
+            src={activeDoctorImage}
+            alt={`Dr. ${activeDoctor?.name ?? "Doctor"}`}
             className="w-full h-auto drop-shadow-2xl"
           />
         </div>
 
         {/* Clinical Details - Left-Aligned Hierarchy */}
-        <div className="w-[60%] md:w-[50%] flex flex-col items-start text-left gap-0 md:gap-2 z-20 pl-8 lg:pl-10 xl:pl-16">
+        <div className="w-[60%] md:w-[55%] lg:w-[50%] flex flex-col items-start text-left gap-0 md:gap-2 z-20 pl-2 md:pl-8 lg:pl-10 xl:pl-16">
           {/* Header Credentials */}
           <div className="space-y-0 w-full overflow-hidden">
             <h3 className="text-[clamp(14px,3vw,40px)] font-canela font-normal text-[#0B5D85] leading-tight flex justify-start items-end gap-x-1 whitespace-nowrap">
-              Dr Chethan Kumar P  <span className="text-[clamp(10px,1.8vw,24px)] font-sohne font-normal text-gray-700 mb-0.5">(MBBS, MD)</span>
+              {`Dr ${activeDoctor?.name ?? ""}`} <span className="text-[clamp(10px,1.8vw,24px)] font-sohne font-normal text-gray-700 mb-0.5">({activeDoctor?.qualification ?? ""})</span>
             </h3>
           </div>
 
           {/* Departmental Intel */}
           <div className="space-y-0.5">
             <p className="text-[clamp(12px,1.6vw,20px)] font-semibold font-sohne text-gray-900 tracking-wider uppercase leading-tight">
-              Orthopedics <span className="hidden md:inline mx-2 text-gray-300 font-normal">|</span> <span className="italic font-bold normal-case">Consultant</span>
+              <span className="block md:inline">{activeDoctor?.department ?? "Orthopedics"}</span>
+              <span className="hidden md:inline mx-2 text-gray-300 font-normal">|</span>
+              <span className="block md:inline italic font-bold normal-case">{activeDoctor?.designation ?? "Consultant"}</span>
             </p>
             <p className="text-[clamp(12px,1.8vw,22px)] text-gray-900 font-semibold tracking-tight leading-tight">
-              Mon - Fri &nbsp; 1:00 PM - 4:00 PM
+              Mon - Fri &nbsp; {activeDoctor?.schedule ?? ""}
             </p>
           </div>
 
           {/* Engagement CTA */}
-          <div className="mt-1 md:mt-1 flex items-center justify-start gap-1 md:gap-2 w-full -ml-2 md:-ml-6 scale-90 md:scale-100 origin-left">
-            <span className="text-[#0B5D85] text-3xl md:text-4xl font-bold -translate-y-[2px] md:translate-y-0">‹</span>
-            <button onClick={onBookAppointment} className="bg-[#0FB1AB] text-white px-2 md:px-10 py-0.5 md:py-1 rounded-md md:rounded-xl font-sohne font-semibold text-[10px] md:text-[20px] leading-[24px] md:leading-[44px]  flex items-center justify-center   tracking-normal uppercase">
+          <div className="mt-1 md:mt-2 flex items-center justify-start gap-1 md:gap-2 w-full -ml-2 md:-ml-4 lg:-ml-6 scale-90 md:scale-95 lg:scale-100 origin-left">
+            <button
+              type="button"
+              onClick={showPreviousDoctor}
+              className="text-[#0B5D85] text-2xl md:text-3xl lg:text-4xl font-bold -translate-y-[2px] md:translate-y-0 leading-none"
+              aria-label="Show previous doctor"
+            >
+              ‹
+            </button>
+            <button onClick={onBookAppointment} className="bg-[#0FB1AB] text-white px-4 md:px-6 lg:px-10 py-1 md:py-2 rounded-md md:rounded-xl font-sohne font-semibold text-[12px] md:text-[16px] lg:text-[20px] leading-tight md:leading-[32px] lg:leading-[44px] flex items-center justify-center tracking-normal uppercase transition-all hover:bg-[#0d9b96]">
               Book Appointment
             </button>
-            <span className="text-[#0B5D85] text-3xl md:text-4xl font-bold -translate-y-[2px] md:translate-y-0">›</span>
+            <button
+              type="button"
+              onClick={showNextDoctor}
+              className="text-[#0B5D85] text-2xl md:text-3xl lg:text-4xl font-bold -translate-y-[2px] md:translate-y-0 leading-none"
+              aria-label="Show next doctor"
+            >
+              ›
+            </button>
           </div>
         </div>
       </div>
